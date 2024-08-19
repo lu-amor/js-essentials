@@ -126,12 +126,16 @@
     97-100 => S */
 
 // 8 - Funcion
-    function fillCart(person, articlesCollection) {
-        person.cart += person.cart[...articlesCollection];
-    }
-/* cartArticlesCollection: [{article: '👟', amount: 1, price: 25}...])
-person: {name: 'Pepe', cart: []}
-it should modify person's cart in order to add the the new collection of articles */
+function updateCart(person, newArticles) {
+    person.cart = [...person.cart, ...newArticles];
+    return person.cart;
+}
+
+console.log("\nejercicio 8");
+console.log(updateCart({name: 'Pepe', cart: []}, [{article: '👟', amount: 1, price: 25}]));
+/* cartArticlesCollection: [{article: '👟', amount: 1, price: 25}];
+person: {name: 'Pepe'; cart: []}; */
+/*it should modify person's cart in order to add the the new collection of articles */
 
 // 9 - Funcion
     function countBanana(inventory) {
